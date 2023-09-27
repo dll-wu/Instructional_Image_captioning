@@ -2,9 +2,7 @@
 This repository contains the official code and models for the submission titled "Training Captioning Models to Follow Instructions with Human-like Supervision" for ICASSP 2024.
 
 ## Abstract
-Instructional fine-tuning with an emphasis on human alignment has demonstrated advantages for conditional text generation. However, achieving similar alignment for image captioning remains elusive. Traditional image captioning models primarily emphasize end-to-end training, often leading to oversimplified captions that do not capture the comprehensive essence of visual content. In contrast, state-of-the-art (SOTA) methods rely heavily on prealigned large language models (LLM) but seldom explore standalone instructional alignment.
-
-To bridge this gap, we study aligning predecessors of image captioning models with humans by leveraging supervision from well-aligned LLMs. Specifically, we employ ChatGPT to summarize and paraphrase diverse image captions into coherent paragraphs, as human-like instructional supervision. We then fine-tune the captioning model using the collected instructional dataset. Empirical evaluations on the COCO Captions dataset showcase remarkable enhancements in caption quality with our approach.
+Instructional fine-tuning with an emphasis on human alignment has demonstrated advantages for conditional text generation. However, achieving similar alignment for image captioning remains elusive. Traditional image captioning models primarily emphasize end-to-end training, often leading to oversimplified captions that do not capture the comprehensive essence of visual content. In contrast, state-of-the-art (SOTA) methods rely heavily on prealigned large language models(LLM) but seldom explore standalone instructional alignment. To bridge this gap, we study aligning predecessors of image captioning models with humans by leveraging supervision from well-aligned LLMs. Specifically, we employ ChatGPT to summarize and paraphrase diverse image captions into coherent paragraphs, as human-like instructional supervision. We then fine-tune the captioning model using the collected instructional dataset. Empirical evaluations on the COCO Captions dataset showcase remarkable enhancements in caption quality with our approach.
 
 Find our implementation and trained models in this repository.
 
@@ -13,7 +11,7 @@ Find our implementation and trained models in this repository.
 Before running the code, you need to install the required packages:
 
 ```bash
-pip install peft bitsandbytes accelerate
+pip install transformers peft bitsandbytes accelerate
 ```
 
 ## Models
@@ -24,6 +22,8 @@ We provide four trained models for our approach:
 - [git-large-refines](https://huggingface.co/kurileo/git-large-refines)
 - [blip2-opt-2.7b-refines](https://huggingface.co/kurileo/blip2-opt-2.7b-refines)
 - [blip2-opt-6.7b-refines](https://huggingface.co/kurileo/blip2-opt-6.7b-refines)
+
+Code for the above models is presented in [/demo](https://github.com/dll-wu/Instructional_Image_captioning/tree/main/demo) folder.
 
 ## Usage
 
@@ -38,7 +38,7 @@ We provide four trained models for our approach:
 
 ## Citation
 
-If you use our code, models, or findings in your research, please cite our work (you'll want to add the BibTeX entry once your paper is published):
+If you use our code, models, or findings in your research, please cite our work:
 
 ```bibtex
 TO be updated
